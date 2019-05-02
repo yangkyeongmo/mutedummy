@@ -1,0 +1,26 @@
+4/26
+- konlpy라는 좋은 한국어 자연어 처리기가 있다. 참고.
+- nltk라는 파이썬 라이브러리를 자연어 처리에 많이 사용하는듯 하다. 공부.
+
+- 설계
+> 입력을 분해(konlpy)
+> 분해된 입력 분해된 질문들과 비교(chatterbot, comparison functions)
+> 가장 유사도 높은 분해된 질문을 얻음
+> 분해된 질문에 대한 답변을 출력
+> inputs -> [splitter] -> splitted inputs -> [comparison] -> 
+most similar splitted question -> answer
+
+- 학습 방법
+> [question, answer1, answer2, ...]
+> splitted question -> [DB]
+> korean levenshtein (edit) distance 구현해서 이용해보기
+
+==================================================
+4/30
+- 각 문장에 대해 대답 (konlpy.[some 분석기].sentences)
+('하지마' 등 말하면 이전까지 내용 취소)
+- 그냥 최대한 많이 ListTrainer를 이용해서 훈련시켜주자
+- 요리 수집은 만개의 레시피를 크롤링
+
+요약: ListTrainer를 이용한 훈련, 만개의 레시피 크롤링, 함수 제작, 입력과 비교 대상의 분해
+목표: 최대한 빠른 시일 내에 작동은 하는 챗봇을 만들기!!
